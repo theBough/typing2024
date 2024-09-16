@@ -1,3 +1,4 @@
+let myLetter;
 function setup() {
   createCanvas(400, 400);
   myFont = loadFont("guerilla.ttf")
@@ -9,6 +10,10 @@ function setup() {
 function draw() {
   background(220);
   textStuff();
+}
+function getLetter(){
+  let str = "school";
+  myLetter = str.charAt(0);
 }
 function textStuff(){
    push()
@@ -24,7 +29,7 @@ function textStuff(){
   pop()
   
   textSize(15)
-  text("test",10,200)
+  text(myLetter,10,200)
 }
 function buttonStuff(){
   myButton = createButton("Click and I will show somethin")
@@ -32,5 +37,5 @@ function buttonStuff(){
   //myButton.style("font-family")
   myButton.style("cursor", "pointer");
   myButton.style("background-color", "#e4c1f9");
-  //myButton.mousePressed(spitFacts)
+  myButton.mousePressed(getLetter)
 }
