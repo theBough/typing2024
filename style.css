@@ -1,0 +1,17 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+@font-face {
+    font-family: 'guerilla';
+    src: url('guerilla.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+button {
+  font-family: 'guerilla', cursive;
+  
+}
