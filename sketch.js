@@ -18,6 +18,7 @@ function draw() {
 
 function playerStuff(){
   p.display()
+  p.update()
 }
 function getLetter(){
   if(i < str.length){
