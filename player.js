@@ -1,7 +1,8 @@
-function Player(x,y,r,col){
+function Player(x,y,w,h,col){
   this.x= x
   this.y= y
-  this.r = r;
+  this.w = w;
+  this.h = h;
   this.col = col;
   
   this.display = function(){
