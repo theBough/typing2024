@@ -1,7 +1,10 @@
-let myLetter;
+let myLetter,i;
+let str = "Welcome to my game, good luck.";
 function setup() {
   createCanvas(400, 400);
   myFont = loadFont("guerilla.ttf")
+  myLetter  =""
+  i=0;
   textFont(myFont)
   buttonStuff();
   textStuff();
@@ -12,8 +15,12 @@ function draw() {
   textStuff();
 }
 function getLetter(){
-  let str = "school";
-  myLetter = str.charAt(0);
+  if(i < str.length){
+    myLetter += str.charAt(i);
+    i+=1;
+    setTimeout(getLetter, 100)
+  }
+  
 }
 function textStuff(){
    push()
