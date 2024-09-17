@@ -1,4 +1,4 @@
-let myLetter,i;
+let myLetter,i,p;
 let str = "Welcome to my game, good luck.";
 function setup() {
   createCanvas(400, 400);
@@ -8,11 +8,16 @@ function setup() {
   textFont(myFont)
   buttonStuff();
   textStuff();
+  p = new Player(200,200,50,50,"#9D8189")
 }
-
 function draw() {
   background(220);
   textStuff();
+  playerStuff();
+}
+
+function playerStuff(){
+  p.display()
 }
 function getLetter(){
   if(i < str.length){
