@@ -1,8 +1,9 @@
-let myLetter,i,p;
+let myLetter,i,p, myImage;
 let str = "Welcome to my game, good luck.";
 function setup() {
   createCanvas(400, 400);
   myFont = loadFont("guerilla.ttf")
+  myImage = loadImage("texasMac.png")
   myLetter  =""
   i=0;
   textFont(myFont)
@@ -14,8 +15,12 @@ function draw() {
   background(220);
   textStuff();
   playerStuff();
+  imageStuff()
 }
 
+function imageStuff(){
+  image(myImage, 20,200)
+}
 function playerStuff(){
   p.display()
   p.update()
