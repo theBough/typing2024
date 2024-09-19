@@ -3,23 +3,24 @@ let str = "Welcome to my game, good luck.";
 function setup() {
   createCanvas(400, 400);
   myFont = loadFont("guerilla.ttf")
-  myImage = loadImage("texasMac.png")
+  myImage = new Pictures(20,200,40,40,"texasMac.png")
   myLetter  =""
   i=0;
   textFont(myFont)
   buttonStuff();
   textStuff();
-  p = new Player(200,200,50,50,"#9D8189")
+  p = new Player(200,200,10,10,"#9D8189")
+  
 }
 function draw() {
   background(220);
   textStuff();
   playerStuff();
-  imageStuff()
+  imageStuff();
 }
-
 function imageStuff(){
-  image(myImage, 20,200)
+  myImage.display()
+  
 }
 function playerStuff(){
   p.display()
