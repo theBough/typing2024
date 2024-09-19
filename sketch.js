@@ -10,13 +10,23 @@ function setup() {
   buttonStuff();
   textStuff();
   p = new Player(200,200,10,10,"#9D8189")
-  
 }
 function draw() {
   background(220);
   textStuff();
   playerStuff();
   imageStuff();
+  checkForCollisions();
+  
+}
+
+function checkForCollisions(){
+  if(collision(p,myImage)){
+    //put the player infront of Texas Mac
+    p.x = 100
+    p.y = 220
+    getLetter()
+  }
 }
 function imageStuff(){
   myImage.display()
