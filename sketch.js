@@ -1,13 +1,14 @@
-let myLetter,i,p, myImage;
+let myLetter,i,p, myImage,secondCharacter;
 let str = "Welcome to my game, good luck.";
 function setup() {
   createCanvas(400, 400);
   myFont = loadFont("guerilla.ttf")
-  myImage = new Pictures(20,200,40,40,"texasMac.png")
+  myImage = new Pictures(20,200,40,40,"texaMacNew.png")
+  secondCharacter = new Pictures(360,200,40,50,"secondCar.png")
   myLetter  =""
   i=0;
   textFont(myFont)
-  buttonStuff();
+  //buttonStuff();
   textStuff();
   p = new Player(200,200,10,10,"#9D8189")
 }
@@ -21,26 +22,38 @@ function draw() {
 }
 
 function checkForCollisions(){
+  
   if(collision(p,myImage)){
     //put the player infront of Texas Mac
     p.x = 100
     p.y = 220
-    getLetter()
+    myLetter = ""
+    i = 0;
+    getLetter("This game is hard. Good Luck")
+  }
+   if(collision(p,secondCharacter)){
+    //put the player to the left of the guy w leather jacket
+    p.x = 300
+    p.y = 220
+    myLetter = ""
+    i = 0;
+    getLetter("Hey wanna buy some cheese?")
   }
 }
 function imageStuff(){
   myImage.display()
+  secondCharacter.display()
   
 }
 function playerStuff(){
   p.display()
   p.update()
 }
-function getLetter(){
-  if(i < str.length){
-    myLetter += str.charAt(i);
+function getLetter(thisString){
+  if(i < thisString.length){
+    myLetter += thisString.charAt(i);
     i+=1;
-    setTimeout(getLetter, 100)
+    setTimeout(getLetter, 100, thisString)
   }
   
 }
@@ -54,11 +67,12 @@ function textStuff(){
   push()
   fill("#9D8189")
   
-  text("Typing",10,50)
+  text("Boughen's game",10,50)
   pop()
   
   textSize(15)
-  text(myLetter,10,200)
+  rect(0,325,400,100)
+  text(myLetter,10,350)
 }
 function buttonStuff(){
   myButton = createButton("Click and I will show somethin")
