@@ -21,12 +21,18 @@ function draw() {
   }else{
     playerStuff();  
   }
-  
   imageStuff();
   checkForCollisions();
-  
 }
-
+function resolveBlackJacket(){
+  console.log("does this work?")
+  if(keyIsDown(89)){
+    //They pressed the letter y
+    myLetter = ""
+    i = 0;
+    getLetter("Here is some Gouda cheese \n Enjoy making homemade Mac & Cheese!")
+  }
+}
 function checkForCollisions(){
   
   if(collision(p,myImage)){
@@ -44,6 +50,7 @@ function checkForCollisions(){
     myLetter = ""
     i = 0;
     getLetter("Hey wanna buy some cheese?")
+     isBlackJacketOn  = true;
   }
 }
 function imageStuff(){
