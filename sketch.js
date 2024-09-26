@@ -25,12 +25,18 @@ function draw() {
   checkForCollisions();
 }
 function resolveBlackJacket(){
-  console.log("does this work?")
+
   if(keyIsDown(89)){
     //They pressed the letter y
     myLetter = ""
     i = 0;
     getLetter("Here is some Gouda cheese \n Enjoy making homemade Mac & Cheese!")
+  }
+  if(keyIsDown(78)){
+    //They pressed the letter n
+    myLetter = ""
+    i = 0;
+    getLetter("So you don't like cheese eh!\nMaybe you should change your attitude towards cheese. \n thanks for playing.")
   }
 }
 function checkForCollisions(){
