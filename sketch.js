@@ -1,4 +1,4 @@
-let myLetter,i,p, myImage,secondCharacter;
+let myLetter,i,p, myImage,secondCharacter,isBlackJacketOn;
 let str = "Welcome to my game, good luck.";
 function setup() {
   createCanvas(400, 400);
@@ -11,11 +11,17 @@ function setup() {
   //buttonStuff();
   textStuff();
   p = new Player(200,200,10,10,"#9D8189")
+  isBlackJacketOn = false;
 }
 function draw() {
   background(220);
   textStuff();
-  playerStuff();
+  if(isBlackJacketOn){
+    resolveBlackJacket()
+  }else{
+    playerStuff();  
+  }
+  
   imageStuff();
   checkForCollisions();
   
