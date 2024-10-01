@@ -22,10 +22,16 @@ function draw() {
   }else{
     playerStuff();  
   }
+  checkInputBox();
   imageStuff();
   checkForCollisions();
 }
-
+function checkInputBox(){
+  if(keyIsDown(13)){
+    //They pressd the enter key.
+    console.log(myInput.value())
+  }
+}
 function inputBoxStuff(){
   myInput = createInput();
   myInput.position(0, 300)
